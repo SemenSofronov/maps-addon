@@ -8,7 +8,7 @@ Version: 1.0.5
 Use this plugin to enable "responsive" features for amCharts' JavaScript Charts,
 JavaScript Stock Chart, or JavaScript Maps.
 
-"Responsive" chart or map will modify it's features dynamically (even as you
+"Responsive" chart or mapInfo will modify it's features dynamically (even as you
 resize the container) based on the available area. For example: a full fledged 
 line chart with legend guides, labels, titles and other elements will be 
 displayed in all its glory if container is big enough.
@@ -20,7 +20,7 @@ plot area. Going even smaller, bullets, labels gone. All the way to the
 sparkline representation of the chart.
 
 Plugin brings a universal set of pre-defined rules that you can use to instantly
-enable responsiveness. Those are custom-tailored for each chart/map type and
+enable responsiveness. Those are custom-tailored for each chart/mapInfo type and
 will probably fit your requirements out-of the-box. All you need to do is to
 enable "responsive" plugin for your chart instance.
 
@@ -351,7 +351,7 @@ http://www.apache.org/licenses/LICENSE-2.0
 * Fixed issue with Stock Chart when Period Selector and Data Set Selector were turned off
 
 ### 1.0.2
-* Fixed a bug where the plugin was causing an error when chart/map container was being hidden
+* Fixed a bug where the plugin was causing an error when chart/mapInfo container was being hidden
 
 ### 1.0.1
 * Fixed bug with overrides being overwritten with chart object in some cases

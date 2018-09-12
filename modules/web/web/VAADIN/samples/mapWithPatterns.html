@@ -7,21 +7,21 @@
 
         <link rel="stylesheet" href="../ammap/ammap.css" type="text/css">
         <script src="../ammap/ammap.js" type="text/javascript"></script>
-        <!-- map file should be included after ammap.js -->
+        <!-- mapInfo file should be included after ammap.js -->
 		<script src="../ammap/maps/js/continentsLow.js" type="text/javascript"></script>
 
 		<script>
-			var map;
+			var mapInfo;
 
 			AmCharts.ready(function() {
-				var map;
+				var mapInfo;
 
-				map = new AmCharts.AmMap();
+				mapInfo = new AmCharts.AmMap();
 
-				map.dragMap = false;
-				map.color = "#FFFFFF";
+				mapInfo.dragMap = false;
+				mapInfo.color = "#FFFFFF";
 
-				map.areasSettings = {
+				mapInfo.areasSettings = {
 					autoZoom: false,
 					rollOverOutlineColor: "#FFFFFF",
 					selectedColor: "#FFFFFF",
@@ -32,7 +32,7 @@
 					color: "#000000"
 				};
 
-				map.dataProvider = {
+				mapInfo.dataProvider = {
 					mapVar: AmCharts.maps.continentsLow,
 
 					areas: [{
@@ -85,11 +85,11 @@
 						}
 					}]
 				};
-				var zoomControl = map.zoomControl;
+				var zoomControl = mapInfo.zoomControl;
 				zoomControl.panControlEnabled = false;
 				zoomControl.zoomControlEnabled = false;
 
-				map.write("mapdiv");
+				mapInfo.write("mapdiv");
 
 			});
 

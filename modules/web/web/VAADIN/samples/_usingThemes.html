@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="style.css" type="text/css">
 
         <script src="../ammap/ammap.js" type="text/javascript"></script>
-        <!-- map file should be included after ammap.js -->
+        <!-- mapInfo file should be included after ammap.js -->
 		<script src="../ammap/maps/js/worldLow.js" type="text/javascript"></script>
         <!-- theme files. you only need to include the theme you use.
              feel free to modify themes and create your own themes -->
@@ -23,7 +23,7 @@
          // in order to set theme for a chart, all you need to include theme file
          // located in amcharts/themes folder and set theme property for the chart.
 
-        var map;
+        var mapInfo;
         makeMap("light", "#FFFFFF");
 
         // Theme can only be applied when creating chart instance - this means
@@ -32,8 +32,8 @@
 
         function makeMap(theme, bgColor, bgImage) {
 
-        	if (map) {
-        		map.clear();
+        	if (mapInfo) {
+        		mapInfo.clear();
         	}
 
         	// background
@@ -42,14 +42,14 @@
 	        	document.body.style.backgroundImage = "url(" + bgImage + ")";
         	}
 
-        	map = AmCharts.makeChart("mapdiv", {
-        		type: "map",
+        	mapInfo = AmCharts.makeChart("mapdiv", {
+        		type: "mapInfo",
         		theme: theme,
 
                 creditsPosition: "top-right",
 
         		dataProvider: {
-        			map: "worldLow",
+        			mapInfo: "worldLow",
         			zoomLevel: 3.5,
         			zoomLongitude: 10,
         			zoomLatitude: 52,

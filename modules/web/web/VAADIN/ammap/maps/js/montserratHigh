@@ -1,4 +1,4 @@
-// (c) ammap.com | SVG (in JSON format) map of Montserrat - High
+// (c) ammap.com | SVG (in JSON format) mapInfo of Montserrat - High
 // areas: {id:"MS"}
 AmCharts.maps.montserratHigh={
 	"svg": {

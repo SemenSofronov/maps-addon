@@ -51,8 +51,8 @@ Since version 3.8.9, change log moved to: http://www.amcharts.com/javascript-map
    # Since this version amMaps support themes. This means that instead of seting every property for each object, you can set
      new defaults in a theme file. This will make devs' life a lot easier.
 
-     Currently you can find three themes in ammap/themes folder - dark.js, light.js and chalk.js To set a theme for a map,
-     simply set theme property to the name of the file: theme:"light". Note, this will work only if you are creating map
+     Currently you can find three themes in ammap/themes folder - dark.js, light.js and chalk.js To set a theme for a mapInfo,
+     simply set theme property to the name of the file: theme:"light". Note, this will work only if you are creating mapInfo
      using JSON config. If you do it in old way (JSON config is supported since v 3.7.0), you should pass theme object for
      each new object you build, for example: var smallMap = new AmCharts.SmallMap(AmCharts.themes.light);
 
@@ -62,10 +62,10 @@ Since version 3.8.9, change log moved to: http://www.amcharts.com/javascript-map
 
 
    # AmCharts.makeChart(divID, chartConfig); method added. divID is id of a div where your chart should appear. chartConfig is
-     JSON object with chart or map configuration. Check examples with _JSON_ prefix in samples folder to see this in action.
+     JSON object with chart or mapInfo configuration. Check examples with _JSON_ prefix in samples folder to see this in action.
 
    # type property added to AmChart class. It is required to specify type to one of the following, when creating charts from
-     JSON config: serial, xy, radar, pie, gauge, funnel, map, stock
+     JSON config: serial, xy, radar, pie, gauge, funnel, mapInfo, stock
 
    # a possibility to export charts as image/pdf/svg added for all modern browsers except IE9 (IE10 is supported). The
      exporting doesn't require any server side software and is made using js libraries only. Check samples with
@@ -83,11 +83,11 @@ Since version 3.8.9, change log moved to: http://www.amcharts.com/javascript-map
 
    # Some other minor bugs fixed
 
-   # draging of a map on touch devices fixed
+   # draging of a mapInfo on touch devices fixed
 
 #### 3.6.0 ####################################################################################################################
 
-     Great new features added - map now support patterns - areas can be filled with images. Check our new inspiring samples at
+     Great new features added - mapInfo now support patterns - areas can be filled with images. Check our new inspiring samples at
      http://www.amcharts.com/inspiration/ to see new possibilities in action.
 
    # patterns
@@ -101,8 +101,8 @@ Since version 3.8.9, change log moved to: http://www.amcharts.com/javascript-map
      Check mapWithPatterns.html example to see this in action.
 
    # hand-drawn style
-     if you set map.handDrawn = true, lines used in a map will be distorted and will produce hand-drawn effect.
-     You can also modify map.handDrawScatter (default value is 2) and map.handDrawThickness (default value 1) values for
+     if you set mapInfo.handDrawn = true, lines used in a mapInfo will be distorted and will produce hand-drawn effect.
+     You can also modify mapInfo.handDrawScatter (default value is 2) and mapInfo.handDrawThickness (default value 1) values for
      more scattered view.
 
    # offsetY and offsetX properties added to AmBalloon. Specifies the distance from the mouse position to balloon's pointer.
@@ -147,7 +147,7 @@ Features:
 labelBackgroundAlpha and labelBackgroundColor added to MapImage.
 
 Fixes:
-map.addLegend(legend, legendDiv) ignored legendDiv attribute.
+mapInfo.addLegend(legend, legendDiv) ignored legendDiv attribute.
 with IE, labels could be wrongly resized in case they are clickable.
 
 3.3.3
@@ -177,8 +177,8 @@ zoomLongitude:zoomLongitude, latitude:latitude, longitude:longitude, left:left, 
 bottom:bottom, percentLeft:percentLeft, percentTop:percentTop, percentRight:percentRight,
 percentBottom:percentBottom, str:string}
 
-"click" event added to AmMap. fired everytime user clicks on a map, except if the map was dragged or zoomed-in with zoomControl.
-By using this event and getDevInfo method you can build your custom map editing user interface.
+"click" event added to AmMap. fired everytime user clicks on a mapInfo, except if the mapInfo was dragged or zoomed-in with zoomControl.
+By using this event and getDevInfo method you can build your custom mapInfo editing user interface.
 
 "rendered" event added to AmChart class. fired only once, when chart is first rendered.
 
@@ -194,7 +194,7 @@ FIX: clickMapObject event was not always fired.
 IMPORTANT! All included maps were updated to follow ISO country and region codes.
 All world maps use two-digit ISO codes. All country-level maps use country code dash region code notation,
 i.e. US-AK. Please note that this is different from the codes we used previously which used underscores.
-Map files for consistency were also renamed to correspond to the map entity names,
+Map files for consistency were also renamed to correspond to the mapInfo entity names,
 i.e. usaLow.js and AmCharts.maps.usaLow.
 
 
@@ -235,7 +235,7 @@ balloon could be wrongly positioned in marginTop style was added directly to <ht
 3.0.6
 
 Object's position accuracy increased.
-Objects list wasn't cleared when drill-down map was used.
+Objects list wasn't cleared when drill-down mapInfo was used.
 zoomCompleted event wasn't always fired.
 
 3.0.5
@@ -249,7 +249,7 @@ LinesSettings. Allows you to set these properties for all objects of the type.
 
 HTML can be displayed in description window.
 
-Map wasn't correctly resized if container of a map changed and map.invalidateSize()
+Map wasn't correctly resized if container of a mapInfo changed and mapInfo.invalidateSize()
 method was called.
 
 Some other minor bugs fixed.

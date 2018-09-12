@@ -22,16 +22,16 @@
     <script>
       /**
        * We will use Data Loader's function to load data "externally"
-       * then create a map when it's loaded
+       * then create a mapInfo when it's loaded
        */
       AmCharts.loadFile( "data/map_areas.json", {}, function( areas ) {
 
-        // now that we loaded our areas, let's create the map
-        var map = AmCharts.makeChart( "chartdiv", {
-          "type": "map",
+        // now that we loaded our areas, let's create the mapInfo
+        var mapInfo = AmCharts.makeChart( "chartdiv", {
+          "type": "mapInfo",
           "colorSteps": 10,
           "dataProvider": {
-            "map": "usaLow",
+            "mapInfo": "usaLow",
             "areas": AmCharts.parseJSON( areas )
           },
           "areasSettings": {

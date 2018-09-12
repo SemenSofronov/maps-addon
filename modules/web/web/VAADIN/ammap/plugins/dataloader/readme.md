@@ -18,7 +18,7 @@ source - static file or dynamically generated - and it will do the rest.
 ## Important notice
 
 Due to security measures implemented in most of the browsers, the external data 
-loader will work only when the page with the chart or map is loaded via web 
+loader will work only when the page with the chart or mapInfo is loaded via web 
 server.
 
 So, any of the examples loaded locally (file:///) will not work.

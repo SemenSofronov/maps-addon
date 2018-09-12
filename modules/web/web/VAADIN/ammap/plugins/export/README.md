@@ -404,7 +404,7 @@ function to create the menu by the given list configured through `menu`.
 
 ### Printing the chart
 
-Adding menu item to print the chart or map is as easy as adding export ones. You
+Adding menu item to print the chart or mapInfo is as easy as adding export ones. You
 just use "PRINT" as `format`. I.e.:
 
 ```
@@ -664,7 +664,7 @@ Property | Description
 action | Set to "draw" if you want the item to trigger annotation mode
 class | Class name applied to the tag
 click | Function handler invoked upon click on menu item
-format | A format to export chart/map to upon click (see below for a list of available formats)
+format | A format to export chart/mapInfo to upon click (see below for a list of available formats)
 icon | Icon file (will use chart's [path](http://docs.amcharts.com/3/javascriptcharts/AmSerialChart#path) if the URL is not full)
 label | Text label to be displayed
 menu | An array of submenu items
@@ -1390,7 +1390,7 @@ http://www.apache.org/licenses/LICENSE-2.0
 * Fix: issue on toCSV handling the header (first row)
 
 ### 1.0.6
-* Fix: issue on revalidation the chart/map
+* Fix: issue on revalidation the chart/mapInfo
 * Added: [path](http://docs.amcharts.com/3/javascriptcharts/AmSerialChart#path) to load the libaries by default
 
 ### 1.0.5

@@ -7,7 +7,7 @@
 
         <link rel="stylesheet" href="../ammap/ammap.css" type="text/css">
         <script src="../ammap/ammap.js" type="text/javascript"></script>
-        <!-- map file should be included after ammap.js -->
+        <!-- mapInfo file should be included after ammap.js -->
 		<script src="../ammap/maps/js/worldLow.js" type="text/javascript"></script>
 		<script src="../ammap/themes/black.js" type="text/javascript"></script>
         <script>
@@ -1828,7 +1828,7 @@
 			}];
 
 
-			var map;
+			var mapInfo;
 			var minBulletSize = 3;
 			var maxBulletSize = 70;
 			var min = Infinity;
@@ -1847,18 +1847,18 @@
 				}
 			}
 
-			// build map
+			// build mapInfo
 			AmCharts.ready(function() {
-				map = new AmCharts.AmMap();
-				map.projection = "winkel3";
+				mapInfo = new AmCharts.AmMap();
+				mapInfo.projection = "winkel3";
 
-				map.addTitle("Population of the World in 2011", 14);
-				map.addTitle("source: Gapminder", 11);
-				map.areasSettings = {
+				mapInfo.addTitle("Population of the World in 2011", 14);
+				mapInfo.addTitle("source: Gapminder", 11);
+				mapInfo.areasSettings = {
 					unlistedAreasColor: "#FFFFFF",
 					unlistedAreasAlpha: 0.1
 				};
-				map.imagesSettings = {
+				mapInfo.imagesSettings = {
 					balloonText: "<span style='font-size:14px;'><b>[[title]]</b>: [[value]]</span>",
 					alpha: 0.6
 				}
@@ -1926,9 +1926,9 @@
 
 
 
-				map.dataProvider = dataProvider;
+				mapInfo.dataProvider = dataProvider;
 
-				map.write("mapdiv");
+				mapInfo.write("mapdiv");
 			});
 		</script>
     </head>
