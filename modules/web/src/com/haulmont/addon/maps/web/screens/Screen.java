@@ -1,6 +1,8 @@
 package com.haulmont.addon.maps.web.screens;
 
 import com.haulmont.addon.maps.web.components.*;
+import com.haulmont.addon.maps.web.components.maps.WorldHigh;
+import com.haulmont.addon.maps.web.components.maps.WorldLow;
 import com.haulmont.cuba.core.global.Resources;
 import com.haulmont.cuba.gui.components.AbstractWindow;
 import com.haulmont.cuba.gui.components.Action;
@@ -130,40 +132,51 @@ public class Screen extends AbstractWindow {
 
         Component box = componentsFactory.createComponent(VBoxLayout.class);
         Layout vBox = (Layout) WebComponentsHelper.unwrap(box);
+
         AmMap amMap = new AmMap();
+        new WorldLow(amMap);
+        new WorldHigh(amMap);
+
         amMap.setMapInfo(mapInfo);
 
         vBox.addComponent(amMap);
         mainWindow.add(box);
 
         WebButton button = componentsFactory.createComponent(WebButton.class);
-        button.setCaption("Refresh");
+        button.setCaption("WorldLow");
 
-        Action refreshMapAction = new BaseAction("refresh");
-        ((BaseAction) refreshMapAction).withHandler(actionPerformedEvent -> {
+        Action setWorldLow = new BaseAction("setWorldLow");
+        ((BaseAction) setWorldLow).withHandler(actionPerformedEvent -> {
 
-            LinesSettings linesSettings1 = mapInfo.getLinesSettings();
-            linesSettings1.setArrowSize(linesSettings1.getArrowSize() + 1);
-            linesSettings1.setColor("#000000");
-            mapInfo.setLinesSettings(linesSettings1);
+//            LinesSettings linesSettings1 = mapInfo.getLinesSettings();
+//            linesSettings1.setArrowSize(linesSettings1.getArrowSize() + 1);
+//            linesSettings1.setColor("#000000");
+//            mapInfo.setLinesSettings(linesSettings1);
+
+            MapData dataProviderTemp = mapInfo.getDataProvider();
+            dataProviderTemp.setMap("worldLow");
+            mapInfo.setDataProvider(dataProviderTemp);
+
             amMap.setMapInfo(mapInfo);
 
-            amMap.markAsDirty();
-
         });
-        button.setAction(refreshMapAction);
+        button.setAction(setWorldLow);
 
         mainWindow.add(button);
 
         WebButton buttonJson = componentsFactory.createComponent(WebButton.class);
-        buttonJson.setCaption("Set Json");
+        buttonJson.setCaption("WorldHigh");
 
-        Action setJsonAction = new BaseAction("json");
-        ((BaseAction) setJsonAction).withHandler(actionPerformedEvent -> {
-            amMap.setJson(json);
-            amMap.markAsDirty();
+        Action setWorldHigh = new BaseAction("setWorldHigh");
+        ((BaseAction) setWorldHigh).withHandler(actionPerformedEvent -> {
+
+            MapData dataProviderTemp = mapInfo.getDataProvider();
+            dataProviderTemp.setMap("worldHigh");
+            mapInfo.setDataProvider(dataProviderTemp);
+
+            amMap.setMapInfo(mapInfo);
         });
-        buttonJson.setAction(setJsonAction);
+        buttonJson.setAction(setWorldHigh);
 
         mainWindow.add(buttonJson);
     }

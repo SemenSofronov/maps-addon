@@ -1,4 +1,4 @@
-com_haulmont_addon_maps_web_toolkit_ui_maps_AmMap = function() {
+com_haulmont_addon_maps_web_components_AmMap = function() {
 
     this.onStateChange = function() {
         var connector = this;
